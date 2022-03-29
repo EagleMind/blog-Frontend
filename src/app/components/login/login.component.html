@@ -1,1 +1,33 @@
-<p>login works!</p>
+<div class="grid">
+  <div class="col"></div>
+  <div class="col-5">
+    <div class="flex align-items-center surface-0 shadow-2 p-3">
+      <div class="col-6 flex align-items-center justify-content-center">
+        <div class="p-fluid">
+          <div class="field">
+            <label for="username">Username</label>
+            <input pInputText id="username" type="text" />
+          </div>
+          <div class="field">
+            <label for="float-input">Password</label>
+            <p-password [toggleMask]="true"></p-password>
+          </div>
+          <p-button label="Login"></p-button>
+        </div>
+      </div>
+      <div class="col-2">
+        <p-divider layout="vertical">
+          <b>OR</b>
+        </p-divider>
+      </div>
+      <div class="col-4 flex align-items-center justify-content-center">
+        <p-button
+          label="Sign Up"
+          icon="pi pi-user-plus"
+          styleClass="p-button-success"
+        ></p-button>
+      </div>
+    </div>
+  </div>
+  <div class="col"></div>
+</div>
