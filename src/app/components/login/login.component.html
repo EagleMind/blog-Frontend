@@ -5,14 +5,14 @@
       <div class="col-6 flex align-items-center justify-content-center">
         <div class="p-fluid">
           <div class="field">
-            <label for="username">Username</label>
-            <input pInputText id="username" type="text" />
+            <label for="username">Email</label>
+            <input pInputText id="email" type="email" [(ngModel)]="email" />
           </div>
           <div class="field">
             <label for="float-input">Password</label>
-            <p-password [toggleMask]="true"></p-password>
+            <p-password [toggleMask]="true" [(ngModel)]="password"></p-password>
           </div>
-          <p-button label="Login"></p-button>
+          <p-button label="Login" (onClick)="login()"></p-button>
         </div>
       </div>
       <div class="col-2">

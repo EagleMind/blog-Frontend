@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/_services/auth.service';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-login',
@@ -7,15 +8,22 @@ import { AuthService } from 'src/app/_services/auth.service';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  constructor(private auth: AuthService) {}
+  email!: string;
+  password!: string;
+
+  constructor(
+    private auth: AuthService,
+    private tokenStorage: TokenStorageService
+  ) {}
 
   ngOnInit(): void {}
 
-  login(email: string, password: string) {
-    this.auth.login(email, password).subscribe({
-      next: (res) => console.log(res),
+  login() {
+    this.auth.login(this.email, this.password).subscribe({
+      next: (res) => {
+        this.tokenStorage.saveToken(res.token, true);
+      },
       error: (err) => console.error(err),
-      complete: () => console.info('complete'),
     });
   }
 }
