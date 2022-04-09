@@ -7,10 +7,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './components/shared/layout/header/header.component';
+import { FooterComponent } from './components/shared/layout/footer/footer.component';
+
+import { MenubarModule } from 'primeng/menubar';
+import { InputTextModule } from 'primeng/inputtext';
+import { TabViewModule } from 'primeng/tabview';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent],
+  declarations: [AppComponent, HomeComponent, HeaderComponent, FooterComponent],
   imports: [
+    ButtonModule,
+    TabViewModule,
+    InputTextModule,
+    MenubarModule,
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
