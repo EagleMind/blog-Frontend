@@ -8,7 +8,7 @@
   [draggable]="false"
   [modal]="true"
 >
-  <app-edit-profile *ngIf="showEdit" [profile]="profile"></app-edit-profile>
+  <app-edit-profile [profile]="profile"></app-edit-profile>
   <ng-template pTemplate="footer">
     <p-button
       (click)="showEdit = false"
