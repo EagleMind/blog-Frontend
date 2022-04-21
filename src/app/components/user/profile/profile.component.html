@@ -1,4 +1,14 @@
-<button pButton (click)="editProfile()">Edit</button>
+<div class="grid layout-border">
+  <div class="col-8">
+    <div class="grid">
+      <div class="col-12">12</div>
+      <div class="col-12">12</div>
+    </div>
+  </div>
+  <div class="col-4">
+    <button pButton (click)="editProfile()">Edit</button>
+  </div>
+</div>
 
 <p-dialog
   header="Edit Profile"
@@ -8,12 +18,12 @@
   [draggable]="false"
   [modal]="true"
 >
-  <app-edit-profile [profile]="profile"></app-edit-profile>
+  <app-edit-profile [profile]="profile" [loading]="loading"></app-edit-profile>
   <ng-template pTemplate="footer">
     <p-button
       (click)="showEdit = false"
       label="Close"
-      styleClass="p-button-text"
+      styleClass="p-button-text p-button-secondary"
     ></p-button>
   </ng-template>
 </p-dialog>

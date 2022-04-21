@@ -11,7 +11,19 @@
     padding: 1rem !important;
   }
 
+  .p-s-10 {
+    padding-right: 10rem !important;
+    padding-left: 10rem !important;
+  }
+
   .pointer {
     cursor: pointer;
+  }
+
+  .topbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1100;
   }
 }

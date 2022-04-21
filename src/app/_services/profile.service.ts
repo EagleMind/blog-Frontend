@@ -17,8 +17,6 @@ export class ProfileService {
   }
 
   update(profile: Profile): Observable<any> {
-    return this.http.put(this.API_URL + 'me/update', {
-      profile: profile,
-    });
+    return this.http.patch(this.API_URL + 'me/update', profile);
   }
 }

@@ -10,6 +10,7 @@ import { ProfileService } from 'src/app/_services/profile.service';
 export class ProfileComponent implements OnInit {
   profile: Profile = new Profile();
   showEdit: boolean = false;
+  loading: boolean = true;
 
   constructor(private profileService: ProfileService) {}
 
@@ -20,8 +21,8 @@ export class ProfileComponent implements OnInit {
   loadData() {
     this.profileService.me().subscribe({
       next: (res) => {
-        this.profile = res[0];
-        console.log(this.profile);
+        this.profile = res;
+        this.loading = false;
       },
       error: (err) => console.error(err),
     });
