@@ -1,0 +1,11 @@
+:host ::ng-deep {
+  .main-avatar {
+    border-radius: 100%;
+  }
+
+  .edit-button {
+    justify-content: end;
+    display: flex;
+    align-items: center;
+  }
+}

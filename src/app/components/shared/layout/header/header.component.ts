@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { TokenStorageService } from 'src/app/_services/token-storage.service';
 
 @Component({
   selector: 'app-header',
@@ -8,10 +9,12 @@ import { MenuItem } from 'primeng/api';
 })
 export class HeaderComponent implements OnInit {
   items!: MenuItem[];
+  isLoggedIn: boolean = false;
 
-  constructor() {}
+  constructor(private tokenStorage: TokenStorageService) {}
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorage.getToken();
     this.items = [
       {
         label: 'File',

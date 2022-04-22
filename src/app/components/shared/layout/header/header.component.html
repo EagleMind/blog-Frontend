@@ -10,6 +10,12 @@
   <ng-template pTemplate="end">
     <input type="text" pInputText placeholder="Search" />
     <span style="margin-left: 1rem"></span>
-    <button pButton routerLink="profile">Profile</button>
+
+    <ng-container *ngIf="isLoggedIn; else loginBlock">
+      <button pButton routerLink="profile">Profile</button>
+    </ng-container>
+    <ng-template #loginBlock>
+      <button pButton routerLink="auth/login">Login</button>
+    </ng-template>
   </ng-template>
 </p-menubar>

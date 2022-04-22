@@ -19,7 +19,6 @@ export class EditProfileComponent implements OnInit {
   inplaceClick(inp: Inplace) {
     if (inp.active) {
       const profileUpdate = this.profile;
-      profileUpdate.email = '';
       this.profileService.update(profileUpdate).subscribe({
         next: (res) => {
           inp.deactivate();

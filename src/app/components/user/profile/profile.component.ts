@@ -21,6 +21,8 @@ export class ProfileComponent implements OnInit {
   loadData() {
     this.profileService.me().subscribe({
       next: (res) => {
+        console.log(res);
+
         this.profile = res;
         this.loading = false;
       },

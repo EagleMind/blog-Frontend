@@ -14,10 +14,14 @@ import { InplaceModule } from 'primeng/inplace';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { SkeletonModule } from 'primeng/skeleton';
+import { ImageModule } from 'primeng/image';
+import { TabViewModule } from 'primeng/tabview';
 
 @NgModule({
   declarations: [ProfileComponent, PostsComponent, EditProfileComponent],
   imports: [
+    TabViewModule,
+    ImageModule,
     SkeletonModule,
     InputTextareaModule,
     InputTextModule,
